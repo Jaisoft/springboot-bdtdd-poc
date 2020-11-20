@@ -1,16 +1,14 @@
-package com.jaisoft.bdtdd.infrastructure.mongo.data;
+package com.jaisoft.bdtdd.infrastructure.springdatamongo.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Builder
 @Document(collection = "users")
-public class UserDB {
+public class UserDocument {
     @Id        
     private String userId;
     private Integer userAge;

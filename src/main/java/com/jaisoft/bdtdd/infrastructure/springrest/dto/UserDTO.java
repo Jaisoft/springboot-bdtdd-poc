@@ -1,12 +1,10 @@
-package com.jaisoft.bdtdd.infrastructure.apirest.dto;
+package com.jaisoft.bdtdd.infrastructure.springrest.dto;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Builder
 public class UserDTO {
     private String userId;
     private Integer userAge;

@@ -1,17 +1,14 @@
-package com.jaisoft.bdtdd.infrastructure.jpa.data;
+package com.jaisoft.bdtdd.infrastructure.springdatajpa.data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
+@Builder
 @Entity
-public class UserJPA {
+public class UserEntity {
     @Id
     private String userId;
     private Integer userAge;

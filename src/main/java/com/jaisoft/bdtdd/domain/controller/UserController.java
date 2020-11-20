@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.infrastructure.apirest;
+package com.jaisoft.bdtdd.domain.controller;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
 

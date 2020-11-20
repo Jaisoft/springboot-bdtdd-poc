@@ -1,31 +1,34 @@
-package com.jaisoft.bdtdd.infrastructure.apirest;
+package com.jaisoft.bdtdd.infrastructure.springrest.controller;
 
-import com.jaisoft.bdtdd.application.CreateNewUserAccount;
 import lombok.AllArgsConstructor;
 import com.jaisoft.bdtdd.domain.model.UserDomain;
-import com.jaisoft.bdtdd.infrastructure.apirest.dto.UserDTO;
+import com.jaisoft.bdtdd.domain.service.UserService;
+import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
+import com.jaisoft.bdtdd.infrastructure.mapper.UserMapper;
+import com.jaisoft.bdtdd.domain.controller.UserController;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 @AllArgsConstructor
 @RestController
 public class UserControllerImpl implements UserController {
 
-    CreateNewUserAccount createNewUser;
+    UserService userService;
 
     @PostMapping("/user")
     ResponseEntity<UserDTO> addUser(@RequestBody UserDTO userDTO){
         var headers = new HttpHeaders();
         headers.add("Responded", "UserController");
-        UserDomain userDomain = new UserDomain(userDTO.getUserId(), userDTO.getUserAge(), userDTO.getUserEmail(), userDTO.getUserName());
-        UserDomain userDomainCreated = createUser(userDomain);
-        UserDTO UserDTOResponse = new UserDTO(userDomainCreated.getUserId(), userDomainCreated.getUserAge(),userDomainCreated.getUserEmail(), userDomainCreated.getUserName());
+        
+        UserDomain userDomain = UserMapper.userDTOtoUserDomanin(userDTO);
+        UserDTO UserDTOResponse = UserMapper.userDomaintoUserDTO(createUser(userDomain));
         return ResponseEntity.accepted().headers(headers).body(UserDTOResponse);
     }
     
     @Override
     public UserDomain createUser(UserDomain user) {
-       return  createNewUser.newUser(user);
+       return  userService.saveUser(user);
     }
 }
