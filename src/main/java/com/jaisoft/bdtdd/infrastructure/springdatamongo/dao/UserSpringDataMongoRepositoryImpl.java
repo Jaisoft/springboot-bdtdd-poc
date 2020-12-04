@@ -4,20 +4,21 @@ import com.jaisoft.bdtdd.domain.model.UserDomain;
 import com.jaisoft.bdtdd.domain.repository.UserRepository;
 import com.jaisoft.bdtdd.infrastructure.mapper.UserMapper;
 import com.jaisoft.bdtdd.infrastructure.springdatamongo.data.UserDocument;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import lombok.AllArgsConstructor;
 
 @Component
-@AllArgsConstructor
-public class UserSpringDataMongoRepositorImpl implements UserRepository {
+public class UserSpringDataMongoRepositoryImpl implements UserRepository {
+    
+    @Autowired
+    private UserSpringDataMongoRepository userSpringDataMongoRepository;
 
-    UserSpringDataMongoRepository userSpringDataMongoRepository;
-
+    
     @Override
-    public UserDomain saveUser(UserDomain userDomain) {
+    public UserDomain createUser(UserDomain userDomain) {
         UserDocument userDocument = UserMapper.userDomainToUserDocument(userDomain);
-       return UserMapper.userDocumentToUserDomain(userSpringDataMongoRepository.insert(userDocument));
+        UserDocument userDocumentCreated = userSpringDataMongoRepository.insert(userDocument);
+       return UserMapper.userDocumentToUserDomain(userDocumentCreated);
     }
     
 }

@@ -1,15 +1,15 @@
 package com.jaisoft.bdtdd.domain.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.annotation.Id;
 
-
-
-
-@Data
+@Getter
+@Setter
 @Builder
 public class UserDomain {
+    @Id
     private String userId;
     private Integer userAge;
     private String userEmail;

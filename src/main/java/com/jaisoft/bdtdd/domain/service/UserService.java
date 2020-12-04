@@ -4,6 +4,6 @@ import com.jaisoft.bdtdd.domain.model.UserDomain;
 
     public interface UserService {
     
-    UserDomain saveUser(UserDomain user);
+    UserDomain createUser(UserDomain user);
     
 }

@@ -1,7 +1,7 @@
 package com.jaisoft.bdtdd.infrastructure.mapper;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
-import com.jaisoft.bdtdd.infrastructure.springdatajpa.data.UserEntity;
+//import com.jaisoft.bdtdd.infrastructure.springdatajpa.data.UserEntity;
 import com.jaisoft.bdtdd.infrastructure.springdatamongo.data.UserDocument;
 import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
 
@@ -45,22 +45,22 @@ public class UserMapper {
     }
 
 
-    public static UserEntity userDomainToUserEntity (UserDomain userDomain){
+    /*public static UserEntity userDomainToUserEntity (UserDomain userDomain){
 
         return UserEntity.builder()
         .userId(userDomain.getUserId())
         .userAge(userDomain.getUserAge())
         .userEmail(userDomain.getUserEmail())
         .userName(userDomain.getUserEmail()).build();
-    }
+    }*/
 
-    public static UserDomain userEntityToUserDomain (UserEntity userEntity){
+    /*public static UserDomain userEntityToUserDomain (UserEntity userEntity){
 
         return UserDomain.builder()
         .userId(userEntity.getUserId())
         .userAge(userEntity.getUserAge())
         .userEmail(userEntity.getUserEmail())
         .userName(userEntity.getUserEmail()).build();
-    }
+    }*/
     
 }
