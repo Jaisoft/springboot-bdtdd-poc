@@ -5,7 +5,11 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "json:target/cucumber-report.json"}, features = {"src/test/resources"}, glue={"stepdefs"})
+@CucumberOptions(
+        plugin = {"pretty", "json:target/cucumber-report.json"},
+        features = {"src/test/resources/features"},
+        glue={"com/jaisoft/bdtdd"}
+)
 public class CucumberRunnerTest {
     
 }

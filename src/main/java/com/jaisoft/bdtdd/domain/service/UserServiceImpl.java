@@ -11,7 +11,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDomain createUser(UserDomain user) {
-
         return userRepository.createUser(user);
     }
     
