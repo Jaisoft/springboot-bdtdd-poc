@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.springdatamongo.dao;
+package com.jaisoft.bdtdd.infrastructure.springdatamongo.dao;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
 import com.jaisoft.bdtdd.infrastructure.springdatamongo.dao.UserSpringDataMongoRepositoryImpl;

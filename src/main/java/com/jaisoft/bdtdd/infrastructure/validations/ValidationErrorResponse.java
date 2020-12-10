@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.infrastructure.springrest.validations;
+package com.jaisoft.bdtdd.infrastructure.validations;
 
 import java.util.ArrayList;
 import java.util.List;

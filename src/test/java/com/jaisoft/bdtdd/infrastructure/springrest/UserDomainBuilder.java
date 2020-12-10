@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.springrest;
+package com.jaisoft.bdtdd.infrastructure.springrest;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
 

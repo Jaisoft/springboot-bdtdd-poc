@@ -1,9 +1,9 @@
 package com.jaisoft.bdtdd.infrastructure.springrest;
 
+import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
 import com.jaisoft.bdtdd.infrastructure.springrest.openapi.UserOpenApi;
 import com.jaisoft.bdtdd.infrastructure.springservice.UserSpringService;
 import com.jaisoft.bdtdd.domain.model.UserDomain;
-import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
 import com.jaisoft.bdtdd.infrastructure.mapper.UserMapper;
 import com.jaisoft.bdtdd.domain.controller.UserController;
 import org.springframework.beans.factory.annotation.Autowired;

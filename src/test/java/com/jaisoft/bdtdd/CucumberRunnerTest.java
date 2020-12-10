@@ -1,5 +1,6 @@
 package com.jaisoft.bdtdd;
 
+import com.jaisoft.bdtdd.infrastructure.springrest.UserSpringControllerIntegrationTest;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -8,8 +9,8 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
         plugin = {"pretty", "json:target/cucumber-report.json"},
         features = {"src/test/resources/features"},
-        glue={"com/jaisoft/bdtdd"}
+        glue={"com/jaisoft/bdtdd/infrastructure/definitions"}
 )
-public class CucumberRunnerTest {
+public class CucumberRunnerTest extends UserSpringControllerIntegrationTest {
     
 }

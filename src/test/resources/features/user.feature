@@ -1,10 +1,7 @@
 Feature: User functionality
 
-  Scenario Outline: As a user I want register
+  Scenario: As a user I want register
 
-    Given I create user with userAge <userAge>, userEmail <userEmail>, userName <userName>
-    Then I see my newly user created
+    Given a unregistered user
 
-    Examples:
-      | userAge | userEmail                      | userName |
-      | 20      | jaime.gomez.moraleda@gmail.com | Jaime    |
+
