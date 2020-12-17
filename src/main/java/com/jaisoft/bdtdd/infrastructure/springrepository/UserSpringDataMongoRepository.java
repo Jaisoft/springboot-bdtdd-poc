@@ -1,6 +1,6 @@
-package com.jaisoft.bdtdd.infrastructure.springdatamongo.dao;
+package com.jaisoft.bdtdd.infrastructure.springrepository;
 
-import com.jaisoft.bdtdd.infrastructure.springdatamongo.data.UserDocument;
+import com.jaisoft.bdtdd.infrastructure.springrepository.data.UserDocument;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

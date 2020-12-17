@@ -1,7 +1,7 @@
 package com.jaisoft.bdtdd.infrastructure.springservice;
 
 import com.jaisoft.bdtdd.domain.service.UserServiceImpl;
-import com.jaisoft.bdtdd.infrastructure.springdatamongo.dao.UserSpringDataMongoRepositoryImpl;
+import com.jaisoft.bdtdd.infrastructure.springrepository.UserSpringDataMongoRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service

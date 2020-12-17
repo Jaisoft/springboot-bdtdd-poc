@@ -2,7 +2,7 @@ package com.jaisoft.bdtdd.infrastructure.mapper;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
 //import com.jaisoft.bdtdd.infrastructure.springdatajpa.data.UserEntity;
-import com.jaisoft.bdtdd.infrastructure.springdatamongo.data.UserDocument;
+import com.jaisoft.bdtdd.infrastructure.springrepository.data.UserDocument;
 import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
 
 public class UserMapper {

@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.infrastructure.springdatamongo.data;
+package com.jaisoft.bdtdd.infrastructure.springrepository.data;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

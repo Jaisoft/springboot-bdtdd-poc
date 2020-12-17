@@ -1,4 +1,4 @@
-package com.jaisoft.bdtdd.infrastructure.validations;
+package com.jaisoft.bdtdd.infrastructure.springrest.validations;
 
 public class Violation {
 

@@ -1,7 +1,6 @@
-package com.jaisoft.bdtdd.infrastructure.springdatamongo.dao;
+package com.jaisoft.bdtdd.infrastructure.springrepository;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
-import com.jaisoft.bdtdd.infrastructure.springdatamongo.dao.UserSpringDataMongoRepositoryImpl;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
@@ -22,18 +21,11 @@ public class UserSpringDataMongoRepositoryIntegrationTest {
 
     @Test
     public void givenUser__whenCreateUser__thenFindUserNotNull() {
-
         UserDomain userDomain = UserDomain.builder()
         .userAge(30)
         .userEmail("jaime.gomez.moraleda@gmail.com")
         .userName("Jaime").build();
-
         UserDomain userDomainCreated = userSpringDataMongoRepositoryImpl.createUser(userDomain);
-
         assertThat(userDomainCreated).isNotNull();
-
     }
-
-
-
 }
