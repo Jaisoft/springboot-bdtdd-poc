@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>15</java.version>
 		<cucumber.version>6.8.0</cucumber.version>
+		<junit.platform.version>1.4.2</junit.platform.version>
 	</properties>
 
 	<dependencies>
@@ -78,12 +79,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-            <version>2.3.4.RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
     </dependencies>
 
 	<build>
