@@ -25,16 +25,15 @@ public class UserAcceptationTest {
         URI uri = new URI(baseUrl);
         HttpEntity<UserDTORequest> request = new HttpEntity<>(UserDTOBuilder.buildUserDTO());
         ResponseEntity<UserDTOResponse> result = this.restTemplate.postForEntity(uri, request, UserDTOResponse.class);
-        //Assert.assertEquals(200, result.getStatusCodeValue());
         assertThat(result.getStatusCode(), equalTo(HttpStatus.OK));
-        //givenAnId_whenGetUser_thenResponseOk(result.getBody().getUserId());
+        givenUserId_whenGetUser_thenResponseOk(result.getBody().getUserId());
     }
 
-    public void givenAnId_whenGetUser_thenResponseOk(String userId) throws URISyntaxException
+    public void givenUserId_whenGetUser_thenResponseOk(String userId) throws URISyntaxException
     {
-
-        final String fooResourceUrl = "http://localhost:8080/v1/user";
-        ResponseEntity<UserDTOResponse> response = this.restTemplate.getForEntity(fooResourceUrl + "/"+ userId, UserDTOResponse.class);
+        final String baseUrl = "http://localhost:8080/v1/user";
+        URI uri = new URI(baseUrl + "/"+ userId);
+        ResponseEntity<UserDTOResponse> response = this.restTemplate.getForEntity(uri, UserDTOResponse.class);
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
     }
 }

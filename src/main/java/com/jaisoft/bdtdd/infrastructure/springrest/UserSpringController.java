@@ -3,7 +3,7 @@ package com.jaisoft.bdtdd.infrastructure.springrest;
 import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTORequest;
 import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTOResponse;
 import com.jaisoft.bdtdd.infrastructure.springrest.openapi.UserOpenApi;
-import com.jaisoft.bdtdd.infrastructure.springservice.UserSpringDomainService;
+import com.jaisoft.bdtdd.infrastructure.springservice.UserSpringService;
 import com.jaisoft.bdtdd.domain.model.UserDomain;
 import com.jaisoft.bdtdd.infrastructure.mapper.UserMapper;
 import com.jaisoft.bdtdd.domain.apidomain.UserDomainAPI;
@@ -17,7 +17,7 @@ import javax.validation.Valid;
 public class UserSpringController implements UserDomainAPI, UserOpenApi {
 
     @Autowired
-    private UserSpringDomainService userSpringService;
+    private UserSpringService userSpringService;
 
     @PostMapping(path = "/user", consumes = "application/json", produces = "application/json")
     public ResponseEntity<UserDTOResponse> createUserRest(@Valid @RequestBody UserDTORequest userDTORequest){
@@ -31,7 +31,8 @@ public class UserSpringController implements UserDomainAPI, UserOpenApi {
        return  userSpringService.createUser(user);
     }
 
-    @GetMapping("/users/{id}")
+
+    @GetMapping(path = "/user/{userId}" , produces = "application/json" )
     public ResponseEntity<UserDTOResponse> getUserRest(@PathVariable("userId") String userId){
         UserDTOResponse userDTOResponse = UserMapper.userDomaintoUserDTO(getUser(userId));
         if (userDTOResponse == null) {

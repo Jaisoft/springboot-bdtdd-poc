@@ -5,9 +5,9 @@ import com.jaisoft.bdtdd.infrastructure.springrepository.UserSpringDataMongoRepo
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
-public class UserSpringDomainService extends UserDomainServiceImpl {
+public class UserSpringService extends UserDomainServiceImpl {
     @Autowired
-    public UserSpringDomainService(UserSpringDataMongoRepositoryImpl userSpringDataMongoRepositoryImpl){
+    public UserSpringService(UserSpringDataMongoRepositoryImpl userSpringDataMongoRepositoryImpl){
         super(userSpringDataMongoRepositoryImpl);
     }
 
