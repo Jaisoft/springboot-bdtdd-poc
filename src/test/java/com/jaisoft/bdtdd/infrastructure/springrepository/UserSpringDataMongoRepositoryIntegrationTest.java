@@ -27,5 +27,22 @@ public class UserSpringDataMongoRepositoryIntegrationTest {
         .userName("Jaime").build();
         UserDomain userDomainCreated = userSpringDataMongoRepositoryImpl.createUser(userDomain);
         assertThat(userDomainCreated).isNotNull();
+        assertThat(userDomainCreated.getUserId()).isNotBlank();
+        assertThat(userDomainCreated.getUserId()).isNotEmpty();
+        assertThat(userDomainCreated.getUserId()).isNotNull();
+        assertThat(userDomainCreated.getUserEmail()).isNotBlank();
+        assertThat(userDomainCreated.getUserEmail()).isNotEmpty();
+        assertThat(userDomainCreated.getUserEmail()).isNotNull();
+    }
+
+    @Test
+    public void givenUserId__whenGetUser__thenFindUserNotNull() {
+        UserDomain userDomain = UserDomain.builder()
+                .userAge(30)
+                .userEmail("jaime.gomez.moraleda@gmail.com")
+                .userName("Jaime").build();
+        UserDomain userDomainCreated = userSpringDataMongoRepositoryImpl.createUser(userDomain);
+        UserDomain userDomainFinded = userSpringDataMongoRepositoryImpl.getUser(userDomainCreated.getUserId());
+        assertThat(userDomainFinded).isNotNull();
     }
 }

@@ -1,19 +1,21 @@
 package com.jaisoft.bdtdd.infrastructure.springrest.dto;
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class UserDTO {
+public class UserDTOResponse {
     private String userId;
-    @NotEmpty(message = "No empty")
+    @NotEmpty(message = "Not empty")
     private Integer userAge;
-    @NotBlank(message = "No blank")
+    @NotBlank(message = "Not blank")
     private String userEmail;
-    @NotNull(message = "No null")
+    @NotNull(message = "Not null")
     private String userName;
 }

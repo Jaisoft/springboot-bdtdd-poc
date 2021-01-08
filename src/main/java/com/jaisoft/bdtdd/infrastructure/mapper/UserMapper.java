@@ -1,33 +1,28 @@
 package com.jaisoft.bdtdd.infrastructure.mapper;
 
 import com.jaisoft.bdtdd.domain.model.UserDomain;
-//import com.jaisoft.bdtdd.infrastructure.springdatajpa.data.UserEntity;
 import com.jaisoft.bdtdd.infrastructure.springrepository.data.UserDocument;
-import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTO;
+import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTORequest;
+import com.jaisoft.bdtdd.infrastructure.springrest.dto.UserDTOResponse;
 
 public class UserMapper {
 
-    public static UserDomain userDTOtoUserDomanin (UserDTO userDTO){
-
+    public static UserDomain userDTOtoUserDomain (UserDTORequest userDTORequest){
         return UserDomain.builder()
-        .userId(userDTO.getUserId())
-        .userAge(userDTO.getUserAge())
-        .userEmail(userDTO.getUserEmail())
-        .userName(userDTO.getUserEmail()).build();
+                .userAge(userDTORequest.getUserAge())
+                .userEmail(userDTORequest.getUserEmail())
+                .userName(userDTORequest.getUserEmail()).build();
     }
 
-    public static UserDTO userDomaintoUserDTO (UserDomain userDomain){
-
-        return UserDTO.builder()
+    public static UserDTOResponse userDomaintoUserDTO (UserDomain userDomain){
+        return UserDTOResponse.builder()
         .userId(userDomain.getUserId())
         .userAge(userDomain.getUserAge())
         .userEmail(userDomain.getUserEmail())
         .userName(userDomain.getUserEmail()).build();
     }
 
-
     public static UserDocument userDomainToUserDocument (UserDomain userDomain){
-
         return UserDocument.builder()
         .userId(userDomain.getUserId())
         .userAge(userDomain.getUserAge())
@@ -36,7 +31,6 @@ public class UserMapper {
     }
 
     public static UserDomain userDocumentToUserDomain (UserDocument userDocument){
-
         return UserDomain.builder()
         .userId(userDocument.getUserId())
         .userAge(userDocument.getUserAge())

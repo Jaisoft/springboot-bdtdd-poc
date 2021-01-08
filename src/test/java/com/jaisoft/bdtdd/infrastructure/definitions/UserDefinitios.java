@@ -10,6 +10,6 @@ public class UserDefinitios extends UserAcceptationTest {
 
     @Given("a unregistered user")
     public void a_unregistered_user() throws URISyntaxException {
-        givenUser__whenCreateUser__thenResponse201();
+        givenUser_whenCreateUser_thenResponseOk();
     }
 }
