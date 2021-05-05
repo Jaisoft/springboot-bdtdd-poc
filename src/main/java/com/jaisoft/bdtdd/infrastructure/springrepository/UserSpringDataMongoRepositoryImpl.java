@@ -6,7 +6,7 @@ import com.jaisoft.bdtdd.infrastructure.mapper.UserMapper;
 import com.jaisoft.bdtdd.infrastructure.springrepository.data.UserDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -27,6 +27,12 @@ public class UserSpringDataMongoRepositoryImpl implements UserDomainRepository {
     public UserDomain getUser(String userId) {
         Optional<UserDocument> OptionalUserDocumentFinded = userSpringDataMongoRepository.findById(userId);
         return UserMapper.userDocumentToUserDomain(OptionalUserDocumentFinded.get());
+    }
+
+    @Override
+    public List<UserDomain> getUsers() {
+       List<UserDocument> userDocumentsFinded=  userSpringDataMongoRepository.findAll();
+        return UserMapper.userDocumentListToUserDomainList(userDocumentsFinded);
     }
 
 }

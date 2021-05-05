@@ -32,8 +32,7 @@ public class UserDomainServiceImplUnitTest {
     @Test
     void givenValidUser_whenSaveUser_thenSucceed() {
         // Given
-        userDomain = UserDomain.builder().userId("userId").userAge(20).userEmail("userEmail").userName("userName").
-                build();
+        userDomain = UserDomain.builder().userId("userId").userAge(20).userEmail("userEmail").userName("userName").build();
         when(userDomainRepository.createUser(any(UserDomain.class))).then(new Answer<UserDomain>() {
             @Override
             public UserDomain answer(InvocationOnMock invocationOnMock) throws Throwable {

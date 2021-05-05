@@ -8,10 +8,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 @Tag(name = "User", description = "The User API with documentation")
 public interface UserOpenApi {
     @Operation(summary = "Create User")
     ResponseEntity<UserDTOResponse> createUserRest(@RequestBody UserDTORequest userDTORequest);
     @Operation(summary = "Get User")
     ResponseEntity<UserDTOResponse> getUserRest(@PathVariable String userId);
+    @Operation(summary = "Get Users")
+    ResponseEntity<List<UserDTOResponse>> getUsersRest();
 }

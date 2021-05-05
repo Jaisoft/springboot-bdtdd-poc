@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("v1")
@@ -42,8 +43,26 @@ public class UserSpringController implements UserDomainAPI, UserOpenApi {
         }
     }
 
+
+
     @Override
     public UserDomain getUser(String userId) {
         return  userSpringService.getUser(userId);
     }
+
+    @Override
+    public List<UserDomain> getUsers() {
+        return userSpringService.getUsers();
+    }
+
+    @GetMapping(path = "/users" , produces = "application/json" )
+    public ResponseEntity<List<UserDTOResponse>> getUsersRest(){
+        List<UserDTOResponse> userDTOResponseList = UserMapper.userDomainListToUserDTOList(getUsers());
+        if (userDTOResponseList == null) {
+            return ResponseEntity.notFound().build();
+        } else {
+            return ResponseEntity.ok(userDTOResponseList);
+        }
+    }
+
 }
